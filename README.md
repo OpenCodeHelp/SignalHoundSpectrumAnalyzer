@@ -1,13 +1,12 @@
 Spike Spectrum Analysis Software
 =====
 
-This is the code in Qt which I took from https://github.com/SignalHound/BBApp .
+该项目 Fork from https://github.com/andruxa-smirnov/SignalHound_Spectrum_Analyzer .
 
-It is the official Github page for Signal Hound's spectrum analyzer software Spike. 
+It is the official Github page for Signal Hound's spectrum analyzer software Spike  https://github.com/SignalHound/BBApp . 
 See *www.signalhound.com* for more information, and for the users manual for this software.
 
-Spike is built using the 64-bit Qt 5.2.1 Desktop OpenGL libraries. 
-Spike has also been built using the 32-bit Qt 5.3.0 Desktop OpenGL libraries.
-Other versions are likely to be compatible *(OpenGL only)* but untested. 
-VS2012 or a later compiler is required, for the use of C++11 features. 
-The application is for Windows only as it relies on the Signal Hound product APIs, which are C++ DLLs for operating Signal Hound's spectrum analyzers.
+编译代码要求：
+    Qt5 Desktop OpenGL libraries.
+    编译器需要支持C++11
+ 已测试：Qt5.9.6 VS2015 32位 、 VS2017 64位 、mingw5.3 32位编译器
