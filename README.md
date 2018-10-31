@@ -9,4 +9,4 @@ See *www.signalhound.com* for more information, and for the users manual for thi
 编译代码要求：
     Qt5 Desktop OpenGL libraries.
     编译器需要支持C++11
- 已测试：Qt5.9.6 VS2015 32位 、 VS2017 64位 、mingw5.3 32位编译器
+已测试：Qt5.9.6 VS2015 32位 、 VS2017 64位 、mingw5.3 32位编译器
