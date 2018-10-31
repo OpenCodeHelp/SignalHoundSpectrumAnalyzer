@@ -126,14 +126,40 @@ OTHER_FILES += \
     bb_app.rc \
     spike.ico
 
-LIBS += \
-    -Ldebug -lbb_api \
-    -Ldebug -lsa_api
 
-INCLUDEPATH += src external_libraries
+INCLUDEPATH += src
 
 RC_FILE = bb_app.rc
 
 RESOURCES = ./resources/bb_app.qrc
 
 FORMS +=
+
+contains(QT,opengl) {
+    LIBS += -lglu32 -lopengl32
+    message(Building with OpenGL support.)
+} else {
+    error(OpenGL support is not available.)
+}
+message(Using Compiler: $$QMAKE_COMPILER)
+contains(QMAKE_COMPILER, msvc) {
+    QMAKE_CFLAGS += -Zc:strictStrings-
+    QMAKE_CXXFLAGS += -Zc:strictStrings-
+}else{
+    LIBS += -lwinmm
+}
+
+contains(DEFINES,WIN32) {
+    contains(DEFINES,WIN64) {
+        message("Windows x64 (64bit) build")
+        LIBS += -L$$PWD/lib/x64
+        DESTDIR = $$PWD/bulid/x64
+    }else{
+        message("Windows x86 (32bit) build")
+        LIBS += -L$$PWD/lib/x86
+        DESTDIR = $$PWD/bulid/x86
+    }
+}
+LIBS += -lsa_api -lbb_api
+
+

@@ -8,8 +8,8 @@ class IdleView : public QWidget {
     Q_OBJECT
 
 public:
-    IdleView();
-    ~IdleView();
+    IdleView(){}
+    ~IdleView(){}
 
     void ConnectDevice();
 
